@@ -59,6 +59,20 @@ kubectl exec -it flask-redis-app bash
 kubectl exec -it redis bash
 ```
 
+### Create replication controller
+```
+kubectl create -f app-rc.yml
+```
+
+### view the controller
+```
+kubectl get rc
+```
+
+### Scaling the pods manually
+```
+kubectl scale rc flask-redis-app --replicas=10
+```
 ---
 
 ### Credit

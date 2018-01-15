@@ -6,8 +6,8 @@ metadata:
     name: flask-redis-app
     app: demo
 spec:
-  replicas: 2
-  template:
+  replicas: 2               # desired config to scale
+  template:                 # Create a template and define which container to replicate
     metadata:
       labels:
         name: flask-redis-app
