@@ -1,0 +1,15 @@
+apiVersion: "v1"
+kind: Pod
+metadata:
+  name: flask-redis-app
+  labels:
+    name: flask-redis-app
+    app: demo
+spec:
+  containers:
+    - name: flask-redis-app
+      image: josephkphan/flask-redis-app
+      ports:
+        - containerPort: 5000
+          name: http
+          protocol: TCP

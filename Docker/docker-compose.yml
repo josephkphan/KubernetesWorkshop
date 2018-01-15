@@ -1,0 +1,10 @@
+# This docker-compose is used as an example to deploy without kubernetes
+flask-redis-app:
+  image: josephkphan/flask-redis-app
+  ports:
+    - "3000:5000"
+  links:
+    - redis
+redis:
+  image: redis:latest
+  container_name: redis
