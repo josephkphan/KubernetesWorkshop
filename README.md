@@ -73,7 +73,38 @@ kubectl get rc
 ```
 kubectl scale rc flask-redis-app --replicas=10
 ```
+
+### Get Details on a service
+```
+kubectl describe svc <pod_name>
+```
+
+### Get Minikube ip
+```
+minikube ip
+```
+
+### Get Exposed Port
+```
+kubectl get svc flask-redis-app 
+```
+Look at the port mapping from 5000:<exposed_NodePort> 
+
+### Changing the service live
+```
+kubectl edit svc flask-redis-app
+```
+
+
+### Make Request to Counter
+```
+curl <minikube_ip>:<exposed_NodePort>
+```
+
 ---
+
+### For my notes on kubernetes
+https://docs.google.com/document/d/1kpnZqGaHbxbWsH9Tfq60piP8a-LdejdlqAwWbKnHPo8/edit?usp=sharing
 
 ### Credit
 This project was inspired by Janakiram's Kubernetes webinar series 

@@ -1,0 +1,16 @@
+# Note this is currently Unused. Plan is to Scale and then use Nginx as a Load Balancer
+# ... or I should try to understand and use Ingress
+apiVersion: "v1"
+kind: Pod
+metadata:       # Metadata on the Pod itself
+  name: mypod   # Name of the Pod
+  labels:
+    app: demo   # Adding tags to the pod
+spec:
+  containers:
+    - name: nginx     # List all the containers to pull
+      image: nginx
+      ports:
+        - name: http
+          containerPort: 80   # Port used by Container
+          protocol: TCP
