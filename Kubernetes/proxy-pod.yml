@@ -3,7 +3,7 @@
 apiVersion: "v1"
 kind: Pod
 metadata:       # Metadata on the Pod itself
-  name: mypod   # Name of the Pod
+  name: nginx   # Name of the Pod
   labels:
     app: demo   # Adding tags to the pod
 spec:
@@ -14,3 +14,23 @@ spec:
         - name: http
           containerPort: 80   # Port used by Container
           protocol: TCP
+  #     volumeMounts:
+  #     - mountPath: /usr/share/nginx/html # Volume path within the container
+  #       name: my-vol    # name of volume created
+
+# USING HOST VOLUME
+
+  # volumes:
+  #   - name: my-vol    # creating Volume 
+  #     hostPath:
+  #       path: /var/lib/my-data  #specific to the node
+
+        # Even if the directory my-data doesn't exist. 
+        # It will get created so you can use the underlying storage
+
+# USING PERSISTENT VOLUME
+
+  # volumes:
+  #   - name: mypd
+  #     persistentVolumeClaim:
+  #       claimName: my-pvc     # Links back to the my-pyc

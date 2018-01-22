@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: my-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi    # define capacity
+  accessMode:
+    - ReadWriteOnce   # enable pods to read and write to underlying file system
+  persistentVolumeReclaimPolicy: Recycle  # written to pool
+  nfs:  # define supported storage class
+    path: /opt/data/tmp # this should be existing before creating the volume 
+    server: 127.0.0.1 # server address
